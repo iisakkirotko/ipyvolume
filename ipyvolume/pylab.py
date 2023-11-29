@@ -5,53 +5,53 @@ from __future__ import division
 import pythreejs
 
 __all__ = [
-    'current',
-    'clear',
-    'controls_light',
-    'figure',
-    'gcf',
-    'xlim',
-    'ylim',
-    'zlim',
-    'xyzlim',
-    'squarelim',
-    'set_box_aspect',
-    'set_box_aspect_data',
-    'plot_trisurf',
-    'plot_surface',
-    'plot_wireframe',
-    'plot_mesh',
-    'plot',
-    'scatter',
-    'quiver',
-    'show',
-    'animate_glyphs',
-    'animation_control',
-    'gcc',
-    'transfer_function',
-    'plot_isosurface',
-    'volshow',
-    'save',
-    'movie',
-    'screenshot',
-    'savefig',
-    'xlabel',
-    'ylabel',
-    'zlabel',
-    'xyzlabel',
-    'view',
-    'style',
-    'plot_plane',
-    'selector_default',
-    'light_ambient',
-    'light_directional',
-    'light_spot',
-    'light_point',
-    'light_hemisphere',
-    'material_physical',
-    'material_phong',
-    'material_lambert',
-    'material_clear',
+    "current",
+    "clear",
+    "controls_light",
+    "figure",
+    "gcf",
+    "xlim",
+    "ylim",
+    "zlim",
+    "xyzlim",
+    "squarelim",
+    "set_box_aspect",
+    "set_box_aspect_data",
+    "plot_trisurf",
+    "plot_surface",
+    "plot_wireframe",
+    "plot_mesh",
+    "plot",
+    "scatter",
+    "quiver",
+    "show",
+    "animate_glyphs",
+    "animation_control",
+    "gcc",
+    "transfer_function",
+    "plot_isosurface",
+    "volshow",
+    "save",
+    "movie",
+    "screenshot",
+    "savefig",
+    "xlabel",
+    "ylabel",
+    "zlabel",
+    "xyzlabel",
+    "view",
+    "style",
+    "plot_plane",
+    "selector_default",
+    "light_ambient",
+    "light_directional",
+    "light_spot",
+    "light_point",
+    "light_hemisphere",
+    "material_physical",
+    "material_phong",
+    "material_lambert",
+    "material_clear",
 ]
 
 import os
@@ -95,7 +95,9 @@ def _docsubst(f):
     return f
 
 
-_seq_sn = "If an (S, N) array, the first dimension will be used for frames in an animation."
+_seq_sn = (
+    "If an (S, N) array, the first dimension will be used for frames in an animation."
+)
 _seq_snm = "If an (S, N, M) array, the first dimension will be used for frames in an animation."
 
 _doc_snippets = {}
@@ -114,30 +116,50 @@ _doc_snippets[
     "marker"
 ] = "name of the marker, options are: 'arrow', 'box', 'diamond', 'sphere', 'point_2d', 'square_2d', 'triangle_2d', "
 "'circle_2d', 'cylinder', 'cylinder_hr' (hr means high resolution, meaning more triangles thus a performance impact)"
-_doc_snippets["x"] = "numpy array of shape (N,) or (S, N) with x positions. {}".format(_seq_sn)
+_doc_snippets["x"] = "numpy array of shape (N,) or (S, N) with x positions. {}".format(
+    _seq_sn
+)
 _doc_snippets["y"] = "idem for y"
 _doc_snippets["z"] = "idem for z"
-_doc_snippets["u_dir"] = "numpy array of shape (N,) or (S, N) indicating the x component of a vector. {}".format(
+_doc_snippets[
+    "u_dir"
+] = "numpy array of shape (N,) or (S, N) indicating the x component of a vector. {}".format(
     _seq_sn
 )
 _doc_snippets["v_dir"] = "idem for y"
 _doc_snippets["w_dir"] = "idem for z"
-_doc_snippets["u"] = "numpy array of shape (N,) or (S, N) indicating the u (x) coordinate for the texture. {}".format(
+_doc_snippets[
+    "u"
+] = "numpy array of shape (N,) or (S, N) indicating the u (x) coordinate for the texture. {}".format(
     _seq_sn
 )
-_doc_snippets["v"] = "numpy array of shape (N,) or (S, N) indicating the v (y) coordinate for the texture. {}".format(
+_doc_snippets[
+    "v"
+] = "numpy array of shape (N,) or (S, N) indicating the v (y) coordinate for the texture. {}".format(
     _seq_sn
 )
-_doc_snippets["x2d"] = "numpy array of shape (N,M) or (S, N, M) with x positions. {}".format(_seq_snm)
+_doc_snippets[
+    "x2d"
+] = "numpy array of shape (N,M) or (S, N, M) with x positions. {}".format(_seq_snm)
 _doc_snippets["y2d"] = "idem for y"
 _doc_snippets["z2d"] = "idem for z"
-_doc_snippets["texture"] = "PIL.Image object or ipywebrtc.MediaStream (can be a seqence)"
-_doc_snippets['cast_shadow'] = 'If this object casts a shadown on other options (default) or not. Works only with Directional, Point and Spot lights.'
-_doc_snippets['receive_shadow'] = 'If this objects receives shadows (default) or not. Works only with Directional, Point and Spot lights.'
-_doc_snippets['opacity'] = "Float in the range of 0.0 - 1.0 indicating how transparent the material is. A value of 0.0 indicates fully transparent, 1.0 is fully opaque."\
+_doc_snippets[
+    "texture"
+] = "PIL.Image object or ipywebrtc.MediaStream (can be a seqence)"
+_doc_snippets[
+    "cast_shadow"
+] = "If this object casts a shadown on other options (default) or not. Works only with Directional, Point and Spot lights."
+_doc_snippets[
+    "receive_shadow"
+] = "If this objects receives shadows (default) or not. Works only with Directional, Point and Spot lights."
+_doc_snippets["opacity"] = (
+    "Float in the range of 0.0 - 1.0 indicating how transparent the material is. A value of 0.0 indicates fully transparent, 1.0 is fully opaque."
     "If the material's transparent property is not set to true, the material will remain fully opaque and this value will only affect its color."
-_doc_snippets['transparent'] = "Defines whether this material is transparent. (NOTE: might not always render correctly, see the topic of order independant transparancy)"
-_doc_snippets['description'] = "Used in the legend and in popup to identify the object"
+)
+_doc_snippets[
+    "transparent"
+] = "Defines whether this material is transparent. (NOTE: might not always render correctly, see the topic of order independant transparancy)"
+_doc_snippets["description"] = "Used in the legend and in popup to identify the object"
 emissive_intensity_default = 0.2
 
 
@@ -168,12 +190,16 @@ def controls_light(return_widget=False):
         min=0, max=1, step=0.001, value=fig.specular_coefficient, description="specular"
     )
     specular_exponent = ipywidgets.FloatSlider(
-        min=0, max=10, step=0.001, value=fig.specular_exponent, description="specular exp"
+        min=0,
+        max=10,
+        step=0.001,
+        value=fig.specular_exponent,
+        description="specular exp",
     )
-    ipywidgets.jslink((fig, 'ambient_coefficient'), (ambient_coefficient, 'value'))
-    ipywidgets.jslink((fig, 'diffuse_coefficient'), (diffuse_coefficient, 'value'))
-    ipywidgets.jslink((fig, 'specular_coefficient'), (specular_coefficient, 'value'))
-    ipywidgets.jslink((fig, 'specular_exponent'), (specular_exponent, 'value'))
+    ipywidgets.jslink((fig, "ambient_coefficient"), (ambient_coefficient, "value"))
+    ipywidgets.jslink((fig, "diffuse_coefficient"), (diffuse_coefficient, "value"))
+    ipywidgets.jslink((fig, "specular_coefficient"), (specular_coefficient, "value"))
+    ipywidgets.jslink((fig, "specular_exponent"), (specular_exponent, "value"))
     widgets_bottom = [
         ipywidgets.HBox([ambient_coefficient, diffuse_coefficient]),
         ipywidgets.HBox([specular_coefficient, specular_exponent]),
@@ -192,7 +218,8 @@ def figure(
     controls_vr=False,
     controls_light=False,
     debug=False,
-    **kwargs
+    show_side_panel=True,
+    **kwargs,
 ):
     """Create a new figure if no key is given, or return the figure associated with key.
 
@@ -203,6 +230,7 @@ def figure(
     :param bool controls: show controls or not
     :param bool controls_vr: show controls for VR or not
     :param bool debug: show debug buttons or not
+    :param bool show_side_panel: show the side panel (containing legend, misc, and debug) or not
     :return: :any:`Figure`
     """
     utils.colab_workarounds()
@@ -218,7 +246,9 @@ def figure(
         current.figure = ipv.Figure(width=width, height=height, **kwargs)
         current.material = None
         legend = ui.Legend(figure=current.figure)
-        current.container = ui.Container(figure=current.figure, legend=legend)
+        current.container = ui.Container(
+            figure=current.figure, legend=legend, show_side_panel=show_side_panel
+        )
 
         current.container.children = []
         if key is None:
@@ -231,13 +261,19 @@ def figure(
             # current.container.children += (ipywidgets.HBox([stereo, ]),)
             pass  # stereo and fullscreen are now include in the js code (per view)
         if controls_vr:
-            eye_separation = ipywidgets.FloatSlider(value=current.figure.eye_separation, min=-10, max=10, icon='eye')
-            ipywidgets.jslink((eye_separation, 'value'), (current.figure, 'eye_separation'))
+            eye_separation = ipywidgets.FloatSlider(
+                value=current.figure.eye_separation, min=-10, max=10, icon="eye"
+            )
+            ipywidgets.jslink(
+                (eye_separation, "value"), (current.figure, "eye_separation")
+            )
             current.container.children = current.container.children + [eye_separation]
         if debug:
-            warnings.warn("debug=True no longer needed", DeprecationWarning, stacklevel=2)
+            warnings.warn(
+                "debug=True no longer needed", DeprecationWarning, stacklevel=2
+            )
         if controls_light:
-            globals()['controls_light']()
+            globals()["controls_light"]()
     return current.figure
 
 
@@ -325,7 +361,7 @@ def squarelim():
 
 
 def set_box_aspect(aspect, *, zoom=1):
-    '''Sets the aspects of the bounding box/axes.
+    """Sets the aspects of the bounding box/axes.
 
     Example:
 
@@ -333,8 +369,8 @@ def set_box_aspect(aspect, *, zoom=1):
 
     :param aspect: 3 tuple defining the relative lengths of the x, y and z axis (normalized by zoom)
     :param float zoom: length of the largest axis.
-    '''
-    aspect = np.array(aspect, dtype='f8')
+    """
+    aspect = np.array(aspect, dtype="f8")
     aspect /= aspect.max()
     aspect *= zoom
     fig = gcf()
@@ -342,10 +378,10 @@ def set_box_aspect(aspect, *, zoom=1):
 
 
 def set_box_aspect_data():
-    '''Sets the aspect of the bounding box equal to the aspects of the data
+    """Sets the aspect of the bounding box equal to the aspects of the data
 
     For volume rendering, this makes your voxels cubes.
-    '''
+    """
     fig = gcf()
     xmin, xmax = fig.xlim
     ymin, ymax = fig.ylim
@@ -361,11 +397,21 @@ default_size_selected = default_size * 1.3
 
 
 def material_clear():
-    '''Set the current material to the default'''
+    """Set the current material to the default"""
     current.material = None
 
 
-def material_physical(color="#ffffff", emissive="#000000", emissive_intensity=emissive_intensity_default, roughness=0.5, metalness=0, flat_shading=False, opacity=1, transparent=False, **kwargs):
+def material_physical(
+    color="#ffffff",
+    emissive="#000000",
+    emissive_intensity=emissive_intensity_default,
+    roughness=0.5,
+    metalness=0,
+    flat_shading=False,
+    opacity=1,
+    transparent=False,
+    **kwargs,
+):
     """Sets the current material to a :any:`pythreejs.MeshPhysicalMaterial`.
 
     :param color color: Color of the material, by default set to white (0xffffff).
@@ -389,13 +435,21 @@ def material_physical(color="#ffffff", emissive="#000000", emissive_intensity=em
         opacity=opacity,
         transparent=transparent,
         side=pythreejs.enums.Side.DoubleSide,
-        **kwargs
+        **kwargs,
     )
     current.material = material
     return current.material
 
 
-def material_phong(emissive="#000000", specular="#111111", shininess=30, flat_shading=False, opacity=1, transparent=False, **kwargs):
+def material_phong(
+    emissive="#000000",
+    specular="#111111",
+    shininess=30,
+    flat_shading=False,
+    opacity=1,
+    transparent=False,
+    **kwargs,
+):
     """Sets the current material to a :any:`pythreejs.MeshPhongMaterial`.
 
     :param color emissive: Emissive (light) color of the material, essentially a solid color unaffected by other lighting. Default is black.
@@ -415,14 +469,21 @@ def material_phong(emissive="#000000", specular="#111111", shininess=30, flat_sh
         opacity=opacity,
         transparent=transparent,
         side=pythreejs.enums.Side.DoubleSide,
-        **kwargs
+        **kwargs,
     )
     current.material = material
     return current.material
 
 
 @_docsubst
-def material_lambert(color="#ffffff", emissive="#000000", flat_shading=False, opacity=1, transparent=False, **kwargs):
+def material_lambert(
+    color="#ffffff",
+    emissive="#000000",
+    flat_shading=False,
+    opacity=1,
+    transparent=False,
+    **kwargs,
+):
     """Sets the current material to a :any:`pythreejs.MeshLambertMaterial`.
 
     :param color color: Color of the material, by default set to white (0xffffff).
@@ -440,7 +501,7 @@ def material_lambert(color="#ffffff", emissive="#000000", flat_shading=False, op
         opacity=opacity,
         transparent=transparent,
         side=pythreejs.enums.Side.DoubleSide,
-        **kwargs
+        **kwargs,
     )
     current.material = material
     return current.material
@@ -448,19 +509,20 @@ def material_lambert(color="#ffffff", emissive="#000000", flat_shading=False, op
 
 @_docsubst
 def plot_trisurf(
-        x,
-        y,
-        z,
-        triangles=None,
-        lines=None,
-        color=default_color,
-        u=None,
-        v=None,
-        texture=None,
-        cast_shadow=True,
-        receive_shadow=True,
-        description=None,
-        **kwargs):
+    x,
+    y,
+    z,
+    triangles=None,
+    lines=None,
+    color=default_color,
+    u=None,
+    v=None,
+    texture=None,
+    cast_shadow=True,
+    receive_shadow=True,
+    description=None,
+    **kwargs,
+):
     """Draw a polygon/triangle mesh defined by a coordinate and triangle indices.
 
     The following example plots a rectangle in the z==2 plane, consisting of 2 triangles:
@@ -500,7 +562,7 @@ def plot_trisurf(
         lines = np.array(lines).astype(dtype=np.uint32)
     kwargs = kwargs.copy()
     if current.material is not None:
-        kwargs['material'] = current.material
+        kwargs["material"] = current.material
 
     if description is None:
         description = f"Mesh {len(fig.meshes)}"
@@ -511,20 +573,32 @@ def plot_trisurf(
         triangles=triangles,
         lines=lines,
         color=color,
-        u=u, v=v,
+        u=u,
+        v=v,
         texture=texture,
         cast_shadow=cast_shadow,
         receive_shadow=receive_shadow,
         description=description,
-        **kwargs
+        **kwargs,
     )
-    _grow_limits(np.array(x).reshape(-1), np.array(y).reshape(-1), np.array(z).reshape(-1))
+    _grow_limits(
+        np.array(x).reshape(-1), np.array(y).reshape(-1), np.array(z).reshape(-1)
+    )
     fig.meshes = fig.meshes + [mesh]
     return mesh
 
 
 @_docsubst
-def plot_surface(x, y, z, color=default_color, wrapx=False, wrapy=False, cast_shadow=True, receive_shadow=True):
+def plot_surface(
+    x,
+    y,
+    z,
+    color=default_color,
+    wrapx=False,
+    wrapy=False,
+    cast_shadow=True,
+    receive_shadow=True,
+):
     """Draws a 2d surface in 3d, defined by the 2d ordered arrays x,y,z.
 
     :param x: {x2d}
@@ -537,11 +611,30 @@ def plot_surface(x, y, z, color=default_color, wrapx=False, wrapy=False, cast_sh
     :param receive_shadow: {receive_shadow}
     :return: :any:`Mesh`
     """
-    return plot_mesh(x, y, z, color=color, wrapx=wrapx, wrapy=wrapy, wireframe=False, cast_shadow=cast_shadow, receive_shadow=receive_shadow)
+    return plot_mesh(
+        x,
+        y,
+        z,
+        color=color,
+        wrapx=wrapx,
+        wrapy=wrapy,
+        wireframe=False,
+        cast_shadow=cast_shadow,
+        receive_shadow=receive_shadow,
+    )
 
 
 @_docsubst
-def plot_wireframe(x, y, z, color=default_color, wrapx=False, wrapy=False, cast_shadow=True, receive_shadow=True):
+def plot_wireframe(
+    x,
+    y,
+    z,
+    color=default_color,
+    wrapx=False,
+    wrapy=False,
+    cast_shadow=True,
+    receive_shadow=True,
+):
     """Draws a 2d wireframe in 3d, defines by the 2d ordered arrays x,y,z.
 
     See also :any:`ipyvolume.pylab.plot_mesh`
@@ -556,13 +649,35 @@ def plot_wireframe(x, y, z, color=default_color, wrapx=False, wrapy=False, cast_
     :param receive_shadow: {receive_shadow}
     :return: :any:`Mesh`
     """
-    return plot_mesh(x, y, z, color=color, wrapx=wrapx, wrapy=wrapy, wireframe=True, surface=False, cast_shadow=cast_shadow, receive_shadow=receive_shadow)
+    return plot_mesh(
+        x,
+        y,
+        z,
+        color=color,
+        wrapx=wrapx,
+        wrapy=wrapy,
+        wireframe=True,
+        surface=False,
+        cast_shadow=cast_shadow,
+        receive_shadow=receive_shadow,
+    )
 
 
 @_docsubst
 def plot_mesh(
-    x, y, z, color=default_color, wireframe=True, surface=True, wrapx=False, wrapy=False, u=None, v=None, texture=None,
-    cast_shadow=True, receive_shadow=True,
+    x,
+    y,
+    z,
+    color=default_color,
+    wireframe=True,
+    surface=True,
+    wrapx=False,
+    wrapy=False,
+    u=None,
+    v=None,
+    texture=None,
+    cast_shadow=True,
+    receive_shadow=True,
     description=None,
 ):
     """Draws a 2d wireframe+surface in 3d: generalization of :any:`plot_wireframe` and :any:`plot_surface`.
@@ -642,11 +757,13 @@ def plot_mesh(
     if isinstance(color, np.ndarray):
         color = reshape_color(color)
 
-    _grow_limits(np.array(x).reshape(-1), np.array(y).reshape(-1), np.array(z).reshape(-1))
+    _grow_limits(
+        np.array(x).reshape(-1), np.array(y).reshape(-1), np.array(z).reshape(-1)
+    )
     triangles, lines = _make_triangles_lines((nx, ny), wrapx, wrapy)
     kwargs = {}
     if current.material is not None:
-        kwargs['material'] = current.material
+        kwargs["material"] = current.material
     mesh = ipv.Mesh(
         x=x,
         y=y,
@@ -660,7 +777,7 @@ def plot_mesh(
         cast_shadow=cast_shadow,
         receive_shadow=receive_shadow,
         description=f"Mesh {len(fig.meshes)}" if description is None else description,
-        **kwargs
+        **kwargs,
     )
     fig.meshes = fig.meshes + [mesh]
     return mesh
@@ -682,10 +799,17 @@ def plot(x, y, z, color=default_color, cast_shadow=True, receive_shadow=True, **
     fig = gcf()
     _grow_limits(x, y, z)
     defaults = dict(
-        visible_lines=True, color_selected=None, size_selected=1, size=1, connected=True, visible_markers=False
+        visible_lines=True,
+        color_selected=None,
+        size_selected=1,
+        size=1,
+        connected=True,
+        visible_markers=False,
     )
     kwargs = dict(defaults, **kwargs)
-    s = ipv.Scatter(x=x, y=y, z=z, color=color, cast_shadow=True, receive_shadow=True, **kwargs)
+    s = ipv.Scatter(
+        x=x, y=y, z=z, color=color, cast_shadow=True, receive_shadow=True, **kwargs
+    )
     s.material.visible = False
     fig.scatters = fig.scatters + [s]
     return s
@@ -706,7 +830,7 @@ def scatter(
     cast_shadow=True,
     receive_shadow=True,
     description=None,
-    **kwargs
+    **kwargs,
 ):
     """Plot many markers/symbols in 3d.
        Due to certain shader limitations, should not use with Spot Lights and Point Lights.
@@ -728,8 +852,8 @@ def scatter(
     """
     fig = gcf()
     kwargs = kwargs.copy()
-    if current.material is not None and 'material' not in kwargs:
-        kwargs['material'] = current.material
+    if current.material is not None and "material" not in kwargs:
+        kwargs["material"] = current.material
     s = ipv.Scatter(
         x=x,
         y=y,
@@ -742,8 +866,10 @@ def scatter(
         selection=selection,
         cast_shadow=cast_shadow,
         receive_shadow=receive_shadow,
-        description=f"Scatter {len(fig.scatters)}" if description is None else description,
-        **kwargs
+        description=f"Scatter {len(fig.scatters)}"
+        if description is None
+        else description,
+        **kwargs,
     )
     if grow_limits:
         _grow_limits(s.x, s.y, s.z)
@@ -766,7 +892,7 @@ def quiver(
     marker="arrow",
     cast_shadow=True,
     receive_shadow=True,
-    **kwargs
+    **kwargs,
 ):
     """Create a quiver plot, which is like a scatter plot but with arrows pointing in the direction given by u, v and w.
 
@@ -788,11 +914,11 @@ def quiver(
     """
     fig = gcf()
     _grow_limits(x, y, z)
-    if 'vx' in kwargs or 'vy' in kwargs or 'vz' in kwargs:
-        raise KeyError('Please use u, v, w instead of vx, vy, vz')
+    if "vx" in kwargs or "vy" in kwargs or "vz" in kwargs:
+        raise KeyError("Please use u, v, w instead of vx, vy, vz")
     kwargs = kwargs.copy()
-    if current.material is not None and 'material' not in kwargs:
-        kwargs['material'] = current.material
+    if current.material is not None and "material" not in kwargs:
+        kwargs["material"] = current.material
     s = ipv.Scatter(
         x=x,
         y=y,
@@ -807,7 +933,7 @@ def quiver(
         geo=marker,
         cast_shadow=cast_shadow,
         receive_shadow=receive_shadow,
-        **kwargs
+        **kwargs,
     )
     fig.scatters = fig.scatters + [s]
     return s
@@ -850,37 +976,53 @@ def animation_control(object, sequence_length=None, add=True, interval=200):
         sequence_lengths = []
         for object in objects:
             sequence_lengths_previous = list(sequence_lengths)
-            values = [getattr(object, name) for name in "x y z aux vx vy vz".split() if hasattr(object, name)]
+            values = [
+                getattr(object, name)
+                for name in "x y z aux vx vy vz".split()
+                if hasattr(object, name)
+            ]
             values = [k for k in values if k is not None]
             # sort them such that the higest dim is first
             values.sort(key=lambda key: -len(key.shape))
             try:
-                sequence_length = values[0].shape[0]  # assume this defines the sequence length
-                if isinstance(object, ipv.Mesh):  # for a mesh, it does not make sense to have less than 1 dimension
-                    if len(values[0].shape) >= 2:  # if just 1d, it is most likely not an animation
+                sequence_length = values[0].shape[
+                    0
+                ]  # assume this defines the sequence length
+                if isinstance(
+                    object, ipv.Mesh
+                ):  # for a mesh, it does not make sense to have less than 1 dimension
+                    if (
+                        len(values[0].shape) >= 2
+                    ):  # if just 1d, it is most likely not an animation
                         sequence_lengths.append(sequence_length)
                 else:
                     sequence_lengths.append(sequence_length)
             except IndexError:  # scalars get ignored
                 pass
-            if hasattr(object, 'color'):
+            if hasattr(object, "color"):
                 color = object.color
                 if color is not None:
                     shape = color.shape
-                    if len(shape) == 3:  # would be the case for for (frame, point_index, color_index)
+                    if (
+                        len(shape) == 3
+                    ):  # would be the case for for (frame, point_index, color_index)
                         sequence_lengths.append(shape[0])
                     # TODO: maybe support arrays of string type of form (frame, point_index)
             if len(sequence_lengths) == len(sequence_lengths_previous):
-                raise ValueError('no frame dimension found for object: {}'.format(object))
+                raise ValueError(
+                    "no frame dimension found for object: {}".format(object)
+                )
         sequence_length = max(sequence_lengths)
     fig = gcf()
     fig.animation = interval
     fig.animation_exponent = 1.0
-    play = ipywidgets.Play(min=0, max=sequence_length - 1, interval=interval, value=0, step=1)
+    play = ipywidgets.Play(
+        min=0, max=sequence_length - 1, interval=interval, value=0, step=1
+    )
     slider = ipywidgets.IntSlider(min=0, max=play.max, step=1)
-    ipywidgets.jslink((play, 'value'), (slider, 'value'))
+    ipywidgets.jslink((play, "value"), (slider, "value"))
     for object in objects:
-        ipywidgets.jslink((slider, 'value'), (object, 'sequence_index'))
+        ipywidgets.jslink((slider, "value"), (object, "sequence_index"))
     control = ipywidgets.HBox([play, slider])
     if add:
         current.container.children = current.container.children + [control]
@@ -895,7 +1037,11 @@ def gcc():
 
 
 def transfer_function(
-    level=[0.1, 0.5, 0.9], opacity=[0.01, 0.05, 0.1], level_width=0.1, controls=True, max_opacity=0.2
+    level=[0.1, 0.5, 0.9],
+    opacity=[0.01, 0.05, 0.1],
+    level_width=0.1,
+    controls=True,
+    max_opacity=0.2,
 ):
     """Create a transfer function, see volshow."""
     tf_kwargs = {}
@@ -931,12 +1077,23 @@ def transfer_function(
     tf = ipv.TransferFunctionWidgetJs3(**tf_kwargs)
     gcf()  # make sure a current container/figure exists
     if controls:
-        current.container.children = [tf.control(max_opacity=max_opacity)] + current.container.children
+        current.container.children = [
+            tf.control(max_opacity=max_opacity)
+        ] + current.container.children
     return tf
 
 
 @_docsubst
-def plot_isosurface(data, level=None, color=default_color, wireframe=True, surface=True, controls=True, extent=None, description=None):
+def plot_isosurface(
+    data,
+    level=None,
+    color=default_color,
+    wireframe=True,
+    surface=True,
+    controls=True,
+    extent=None,
+    description=None,
+):
     """Plot a surface at constant value (like a 2d contour).
 
     :param data: 3d numpy array
@@ -953,10 +1110,12 @@ def plot_isosurface(data, level=None, color=default_color, wireframe=True, surfa
     """
     if level is None:
         level = np.median(data)
-    if hasattr(skimage.measure, 'marching_cubes_lewiner'):
+    if hasattr(skimage.measure, "marching_cubes_lewiner"):
         values = skimage.measure.marching_cubes_lewiner(data, level)
     else:
-        values = skimage.measure.marching_cubes(data, level)  # pylint: disable=no-member
+        values = skimage.measure.marching_cubes(
+            data, level
+        )  # pylint: disable=no-member
     verts, triangles = values[:2]  # version 0.13 returns 4 values, normals, values
     # in the future we may want to support normals and the values (with colormap)
     # and require skimage >= 0.13
@@ -973,23 +1132,31 @@ def plot_isosurface(data, level=None, color=default_color, wireframe=True, surfa
     fig = gcf()
     if description is None:
         description = f"Isosurface {len(fig.meshes)}"
-    mesh = plot_trisurf(x, y, z, triangles=triangles, color=color, description=description)
+    mesh = plot_trisurf(
+        x, y, z, triangles=triangles, color=color, description=description
+    )
     if controls:
         vmin, vmax = np.percentile(data, 1), np.percentile(data, 99)
         step = (vmax - vmin) / 250
-        level_slider = ipywidgets.FloatSlider(value=level, min=vmin, max=vmax, step=step, icon='eye')
-        recompute_button = ipywidgets.Button(description='update')
+        level_slider = ipywidgets.FloatSlider(
+            value=level, min=vmin, max=vmax, step=step, icon="eye"
+        )
+        recompute_button = ipywidgets.Button(description="update")
         controls = ipywidgets.HBox(children=[level_slider, recompute_button])
         current.container.children = current.container.children + [controls]
 
         def recompute(*_ignore):
             level = level_slider.value
             recompute_button.description = "updating..."
-            if hasattr(skimage.measure, 'marching_cubes_lewiner'):
+            if hasattr(skimage.measure, "marching_cubes_lewiner"):
                 values = skimage.measure.marching_cubes_lewiner(data, level)
             else:
-                values = skimage.measure.marching_cubes(data, level)  # pylint: disable=no-member
-            verts, triangles = values[:2]  # version 0.13 returns 4 values, normals, values
+                values = skimage.measure.marching_cubes(
+                    data, level
+                )  # pylint: disable=no-member
+            verts, triangles = values[
+                :2
+            ]  # version 0.13 returns 4 values, normals, values
             # in the future we may want to support normals and the values (with colormap)
             # and require skimage >= 0.13
             x, y, z = verts.T
@@ -1023,7 +1190,7 @@ def volshow(
     level_width=0.1,
     controls=True,
     max_opacity=0.2,
-    memorder='C',
+    memorder="C",
     extent=None,
     description=None,
 ):
@@ -1061,12 +1228,14 @@ def volshow(
     fig = gcf()
 
     if tf is None:
-        tf = transfer_function(level, opacity, level_width, controls=controls, max_opacity=max_opacity)
+        tf = transfer_function(
+            level, opacity, level_width, controls=controls, max_opacity=max_opacity
+        )
     if data_min is None:
         data_min = np.nanmin(data)
     if data_max is None:
         data_max = np.nanmax(data)
-    if memorder == 'F':
+    if memorder == "F":
         data = data.T
 
     if extent is None:
@@ -1089,16 +1258,22 @@ def volshow(
         specular_coefficient=specular_coefficient,
         specular_exponent=specular_exponent,
         rendering_lighting=lighting,
-        description=f"Volume {len(fig.volumes)}" if description is None else description,
+        description=f"Volume {len(fig.volumes)}"
+        if description is None
+        else description,
     )
 
     vol._listen_to(fig)
 
     if controls:
-        widget_opacity_scale = ipywidgets.FloatLogSlider(base=10, min=-2, max=2, description="opacity")
-        widget_brightness = ipywidgets.FloatLogSlider(base=10, min=-1, max=1, description="brightness")
-        ipywidgets.jslink((vol, 'opacity_scale'), (widget_opacity_scale, 'value'))
-        ipywidgets.jslink((vol, 'brightness'), (widget_brightness, 'value'))
+        widget_opacity_scale = ipywidgets.FloatLogSlider(
+            base=10, min=-2, max=2, description="opacity"
+        )
+        widget_brightness = ipywidgets.FloatLogSlider(
+            base=10, min=-1, max=1, description="brightness"
+        )
+        ipywidgets.jslink((vol, "opacity_scale"), (widget_opacity_scale, "value"))
+        ipywidgets.jslink((vol, "brightness"), (widget_brightness, "value"))
         widgets_bottom = [ipywidgets.HBox([widget_opacity_scale, widget_brightness])]
         current.container.children = current.container.children + widgets_bottom
 
@@ -1110,10 +1285,10 @@ def volshow(
 def save(
     filepath,
     makedirs=True,
-    title=u'IPyVolume Widget',
+    title="IPyVolume Widget",
     all_states=False,
     offline=False,
-    scripts_path='js',
+    scripts_path="js",
     drop_defaults=False,
     template_options=(("extra_script_head", ""), ("body_pre", ""), ("body_post", "")),
     devmode=False,
@@ -1210,9 +1385,13 @@ def movie(
             else:
                 loop = "-loop %d" % gif_loop
             delay = 100 / fps
-            cmd = cmd_template_gif.format(delay=delay, loop=loop, tempdir=tempdir, filename=movie_filename)
+            cmd = cmd_template_gif.format(
+                delay=delay, loop=loop, tempdir=tempdir, filename=movie_filename
+            )
         else:
-            cmd = cmd_template_ffmpeg.format(fps=fps, tempdir=tempdir, filename=movie_filename)
+            cmd = cmd_template_ffmpeg.format(
+                fps=fps, tempdir=tempdir, filename=movie_filename
+            )
         print(cmd)
         os.system(cmd)
     return tempdir
@@ -1234,13 +1413,13 @@ def _screenshot_data(
         assert isinstance(fig, ipv.Figure)
     if headless:
         tempdir = tempfile.mkdtemp()
-        tempfile_ = os.path.join(tempdir, 'headless.html')
+        tempfile_ = os.path.join(tempdir, "headless.html")
         save(tempfile_, offline=True, scripts_path=tempdir, devmode=devmode)
         import ipyvolume.headless
 
         data = ipyvolume.headless._screenshot_data("file://" + tempfile_)
         if data is None:
-            raise ValueError('Error capturing data from headless browser')
+            raise ValueError("Error capturing data from headless browser")
     else:
         if output_widget is None:
             output_widget = ipywidgets.Output()
@@ -1304,7 +1483,7 @@ def screenshot(
     :return: PIL.Image
 
     """
-    assert format in ['png', 'jpeg', 'svg'], "image format must be png, jpeg or svg"
+    assert format in ["png", "jpeg", "svg"], "image format must be png, jpeg or svg"
     data = _screenshot_data(
         timeout_seconds=timeout_seconds,
         output_widget=output_widget,
@@ -1320,7 +1499,14 @@ def screenshot(
 
 
 def savefig(
-    filename, width=None, height=None, fig=None, timeout_seconds=10, output_widget=None, headless=False, devmode=False
+    filename,
+    width=None,
+    height=None,
+    fig=None,
+    timeout_seconds=10,
+    output_widget=None,
+    headless=False,
+    devmode=False,
 ):
     """Save the figure to an image file.
 
@@ -1336,7 +1522,7 @@ def savefig(
     """
     __, ext = os.path.splitext(filename)
     format = ext[1:]
-    assert format in ['png', 'jpeg', 'svg'], "image format must be png, jpeg or svg"
+    assert format in ["png", "jpeg", "svg"], "image format must be png, jpeg or svg"
     with open(filename, "wb") as f:
         f.write(
             _screenshot_data(
@@ -1387,7 +1573,7 @@ def view(azimuth=None, elevation=None, distance=None):
     fig = gcf()
     # first calculate the current values
     x, y, z = fig.camera.position
-    r = np.sqrt(x ** 2 + y ** 2 + z ** 2)
+    r = np.sqrt(x**2 + y**2 + z**2)
     az = np.degrees(np.arctan2(x, z))
     el = np.degrees(np.arcsin(y / r))
     if azimuth is None:
@@ -1400,7 +1586,11 @@ def view(azimuth=None, elevation=None, distance=None):
     sinaz = np.sin(np.radians(azimuth))
     sine = np.sin(np.radians(elevation))
     cose = np.cos(np.radians(elevation))
-    fig.camera.position = (distance * sinaz * cose, distance * sine, distance * cosaz * cose)
+    fig.camera.position = (
+        distance * sinaz * cose,
+        distance * sine,
+        distance * cosaz * cose,
+    )
     return azimuth, elevation, distance
 
 
@@ -1431,19 +1621,20 @@ class style:
         :param style: matplotlib style name, or dict with values, or a sequence of these, where the last value overrides previous
         :return:
         """
+
         def valid(value):  # checks if json'able
             return isinstance(value, six.string_types)
 
         def translate(mplstyle):
             style = {}
             mapping = [
-                ['figure.facecolor', 'background-color'],
-                ['xtick.color', 'axes.x.color'],  # TODO: is this the right thing?
-                ['xtick.color', 'axes.z.color'],  # map x to z as well
-                ['ytick.color', 'axes.y.color'],
-                ['axes.labelcolor', 'axes.label.color'],
-                ['text.color', 'color'],
-                ['axes.edgecolor', 'axes.color'],
+                ["figure.facecolor", "background-color"],
+                ["xtick.color", "axes.x.color"],  # TODO: is this the right thing?
+                ["xtick.color", "axes.z.color"],  # map x to z as well
+                ["ytick.color", "axes.y.color"],
+                ["axes.labelcolor", "axes.label.color"],
+                ["text.color", "color"],
+                ["axes.edgecolor", "axes.color"],
             ]
             for from_name, to_name in mapping:
                 if from_name in mplstyle:
@@ -1472,7 +1663,9 @@ class style:
                     # lets see if we can copy matplotlib's style
                     # we assume now it's a matplotlib style, get all properties that we understand
                     cleaned_style = {
-                        key: value for key, value in dict(matplotlib.style.library[style]).items() if valid(value)
+                        key: value
+                        for key, value in dict(matplotlib.style.library[style]).items()
+                        if valid(value)
                     }
                     style = translate(cleaned_style)
                     # totalstyle.update(cleaned_style)
@@ -1487,9 +1680,9 @@ class style:
     @staticmethod
     def _axes(which=None, **values):
         if which:
-            style.use({'axes': {name: values for name in which}})
+            style.use({"axes": {name: values for name in which}})
         else:
-            style.use({'axes': values})
+            style.use({"axes": values})
 
     @staticmethod
     def axes_off(which=None):
@@ -1504,17 +1697,17 @@ class style:
     @staticmethod
     def box_off():
         """Do not draw the box around the visible volume."""
-        style.use({'box': {'visible': False}})
+        style.use({"box": {"visible": False}})
 
     @staticmethod
     def box_on():
         """Draw a box around the visible volume."""
-        style.use({'box': {'visible': True}})
+        style.use({"box": {"visible": True}})
 
     @staticmethod
     def background_color(color):
         """Set the background color."""
-        style.use({'background-color': color})
+        style.use({"background-color": color})
 
 
 for style_name, __ in ipv.styles.styles.items():
@@ -1523,7 +1716,7 @@ for style_name, __ in ipv.styles.styles.items():
         def quick_set():
             style.use(style_name)
 
-        attr_name = 'set_style_' + style_name
+        attr_name = "set_style_" + style_name
         attr = staticmethod(quick_set)
         setattr(style, attr_name, attr)
         getattr(style, attr_name).__doc__ = """Short for style.use(%r)""" % style_name
@@ -1551,7 +1744,7 @@ def plot_plane(where="back", texture=None, description=None, **kwargs):
     if where == "z":
         x = [xmin, xmax, xmax, xmin]
         y = [ymin, ymin, ymax, ymax]
-        z = [0., 0., 0., 0.]
+        z = [0.0, 0.0, 0.0, 0.0]
     if where == "front":
         x = [xmin, xmax, xmax, xmin][::-1]
         y = [ymin, ymin, ymax, ymax]
@@ -1561,7 +1754,7 @@ def plot_plane(where="back", texture=None, description=None, **kwargs):
         y = [ymin, ymin, ymax, ymax]
         z = [zmin, zmax, zmax, zmin]
     if where == "x":
-        x = [0., 0., 0., 0.]
+        x = [0.0, 0.0, 0.0, 0.0]
         y = [ymin, ymin, ymax, ymax]
         z = [zmin, zmax, zmax, zmin]
     if where == "right":
@@ -1578,7 +1771,7 @@ def plot_plane(where="back", texture=None, description=None, **kwargs):
         z = [zmin, zmin, zmax, zmax]
     if where == "y":
         x = [xmax, xmin, xmin, xmax]
-        y = [0., 0., 0., 0.]
+        y = [0.0, 0.0, 0.0, 0.0]
         z = [zmin, zmin, zmax, zmax]
     triangles = [(0, 1, 2), (0, 2, 3)]
     u = v = None
@@ -1587,7 +1780,9 @@ def plot_plane(where="back", texture=None, description=None, **kwargs):
         v = [0.0, 0.0, 1.0, 1.0]
     if description is None:
         description = f"Plane: {where}"
-    mesh = plot_trisurf(x, y, z, triangles, texture=texture, u=u, v=v, description=description, **kwargs)
+    mesh = plot_trisurf(
+        x, y, z, triangles, texture=texture, u=u, v=v, description=description, **kwargs
+    )
     return mesh
 
 
@@ -1621,8 +1816,8 @@ def selector_default(output_widget=None):
     def lasso(data, other=None, fig=fig):
         with output_widget:
             inside = None
-            if data['device'] and data['type'] == 'lasso':
-                region = shapely.geometry.Polygon(data['device'])
+            if data["device"] and data["type"] == "lasso":
+                region = shapely.geometry.Polygon(data["device"])
 
                 @np.vectorize
                 def inside_polygon(x, y):
@@ -1630,21 +1825,21 @@ def selector_default(output_widget=None):
 
                 inside = inside_polygon
 
-            if data['device'] and data['type'] == 'circle':
-                x1, y1 = data['device']['begin']
-                x2, y2 = data['device']['end']
+            if data["device"] and data["type"] == "circle":
+                x1, y1 = data["device"]["begin"]
+                x2, y2 = data["device"]["end"]
                 dx = x2 - x1
                 dy = y2 - y1
-                r = (dx ** 2 + dy ** 2) ** 0.5
+                r = (dx**2 + dy**2) ** 0.5
 
                 def inside_circle(x, y):
-                    return ((x - x1) ** 2 + (y - y1) ** 2) < r ** 2
+                    return ((x - x1) ** 2 + (y - y1) ** 2) < r**2
 
                 inside = inside_circle
 
-            if data['device'] and data['type'] == 'rectangle':
-                x1, y1 = data['device']['begin']
-                x2, y2 = data['device']['end']
+            if data["device"] and data["type"] == "rectangle":
+                x1, y1 = data["device"]["begin"]
+                x2, y2 = data["device"]["end"]
                 x = [x1, x2]
                 y = [y1, y2]
                 xmin, xmax = min(x), max(x)
@@ -1679,7 +1874,9 @@ def selector_default(output_widget=None):
             for scatter in fig.scatters:
                 x, y = fig.project(scatter.x, scatter.y, scatter.z)
                 mask = inside(x, y)
-                scatter.selected = join(scatter.selected, np.where(mask), fig.selection_mode)
+                scatter.selected = join(
+                    scatter.selected, np.where(mask), fig.selection_mode
+                )
 
     fig.on_selection(lasso)
 
@@ -1757,9 +1954,7 @@ def _make_triangles_lines(shape, wrapx=False, wrapy=False):
     return triangles, lines
 
 
-def light_ambient(
-        light_color=default_color_selected,
-        intensity=1):
+def light_ambient(light_color=default_color_selected, intensity=1):
     """Create a new Ambient Light
         An Ambient Light source represents an omni-directional, fixed-intensity and fixed-color light source that affects all objects in the scene equally (is omni-present).
         This light cannot be used to cast shadows.
@@ -1777,10 +1972,8 @@ def light_ambient(
 
 
 def light_hemisphere(
-        light_color='#ffffbb',
-        light_color2='#080820',
-        intensity=1,
-        position=[0, 1, 0]):
+    light_color="#ffffbb", light_color2="#080820", intensity=1, position=[0, 1, 0]
+):
     """Create a new Hemisphere Light
 
     A light source positioned directly above the scene, with color fading from the sky color to the ground color.
@@ -1793,7 +1986,12 @@ def light_hemisphere(
     :return: :any:`pythreejs.HemisphereLight`
     """
 
-    light = pythreejs.HemisphereLight(color=light_color, groundColor=light_color2, intensity=intensity, position=position)
+    light = pythreejs.HemisphereLight(
+        color=light_color,
+        groundColor=light_color2,
+        intensity=intensity,
+        position=position,
+    )
 
     fig = gcf()
     fig.lights = fig.lights + [light]
@@ -1802,14 +2000,15 @@ def light_hemisphere(
 
 
 def light_directional(
-        light_color=default_color_selected,
-        intensity=1,
-        position=[10, 10, 10],
-        target=[0, 0, 0],
-        near=0.1,
-        far=100,
-        shadow_camera_orthographic_size=10,
-        cast_shadow=True):
+    light_color=default_color_selected,
+    intensity=1,
+    position=[10, 10, 10],
+    target=[0, 0, 0],
+    near=0.1,
+    far=100,
+    shadow_camera_orthographic_size=10,
+    cast_shadow=True,
+):
     """Create a new Directional Light
 
     A Directional Light source illuminates all objects equally from a given direction.
@@ -1833,13 +2032,13 @@ def light_directional(
         left=-shadow_camera_orthographic_size / 2,
         right=shadow_camera_orthographic_size / 2,
         top=shadow_camera_orthographic_size / 2,
-        bottom=-shadow_camera_orthographic_size / 2
+        bottom=-shadow_camera_orthographic_size / 2,
     )
     shadow = pythreejs.DirectionalLightShadow(
         mapSize=(shadow_map_size, shadow_map_size),
         radius=shadow_radius,
         bias=shadow_bias,
-        camera=camera
+        camera=camera,
     )
     # Light params
     target = pythreejs.Object3D(position=target)
@@ -1849,7 +2048,7 @@ def light_directional(
         position=position,
         target=target,
         castShadow=cast_shadow,
-        shadow=shadow
+        shadow=shadow,
     )
 
     fig = gcf()
@@ -1860,11 +2059,12 @@ def light_directional(
 
 
 def light_spot(
-        light_color=default_color_selected,
-        intensity=1,
-        position=[10, 10, 10],
-        target=[0, 0, 0],
-        cast_shadow=True):
+    light_color=default_color_selected,
+    intensity=1,
+    position=[10, 10, 10],
+    target=[0, 0, 0],
+    cast_shadow=True,
+):
     """Create a new Spot Light
 
     A Spot Light produces a directed cone of light.
@@ -1892,17 +2092,12 @@ def light_spot(
     aspect = 1
 
     # Shadow params
-    camera = pythreejs.PerspectiveCamera(
-        near=near,
-        far=far,
-        fov=fov,
-        aspect=aspect
-    )
+    camera = pythreejs.PerspectiveCamera(near=near, far=far, fov=fov, aspect=aspect)
     shadow = pythreejs.LightShadow(
         mapSize=(shadow_map_size, shadow_map_size),
         radius=shadow_radius,
         bias=shadow_bias,
-        camera=camera
+        camera=camera,
     )
     # Light params
     target = pythreejs.Object3D(position=target)
@@ -1916,7 +2111,7 @@ def light_spot(
         decay=decay,
         penumbra=penumbra,
         castShadow=cast_shadow,
-        shadow=shadow
+        shadow=shadow,
     )
 
     fig = gcf()
@@ -1927,11 +2122,12 @@ def light_spot(
 
 
 def light_point(
-        light_color=default_color_selected,
-        intensity=1,
-        position=[10, 10, 10],
-        shadow_map_size=1024,
-        cast_shadow=True):
+    light_color=default_color_selected,
+    intensity=1,
+    position=[10, 10, 10],
+    shadow_map_size=1024,
+    cast_shadow=True,
+):
     """Create a new Point Light
 
     A Point Light originates from a single point and spreads outward in all directions.
@@ -1953,17 +2149,12 @@ def light_point(
     shadow_radius = 1
 
     # Shadow params
-    camera = pythreejs.PerspectiveCamera(
-        near=near,
-        far=far,
-        fov=fov,
-        aspect=aspect
-    )
+    camera = pythreejs.PerspectiveCamera(near=near, far=far, fov=fov, aspect=aspect)
     shadow = pythreejs.LightShadow(
         mapSize=(shadow_map_size, shadow_map_size),
         radius=shadow_radius,
         bias=shadow_bias,
-        camera=camera
+        camera=camera,
     )
     # Light params
     light = pythreejs.PointLight(
@@ -1973,7 +2164,7 @@ def light_point(
         distance=distance,
         decay=decay,
         castShadow=cast_shadow,
-        shadow=shadow
+        shadow=shadow,
     )
 
     fig = gcf()
